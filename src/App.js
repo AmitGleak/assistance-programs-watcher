@@ -1,24 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import DataTable from './DataTable.js';
+import Button from '@material-ui/core/Button';
 
 const App = () => {
+  const programs = {
+    "programs": [
+      {
+        "name": "A",
+        "treatmentsCovered": ['fasdfd', 'fdasf', 'dafd', 'dafdas', 'afdafdas', 'fdafd', 'fdasf', 'fdafdsafd', 'fdas', 'vkalfd', 'qruafipodaf'],
+        "status": "Open",
+        "maxAwardLevel": "$60,000"
+      },
+      {
+        "name": "B",
+        "treatmentsCovered": ['dfas', 'gfg', 'gtrt', 'yrudnff'],
+        "status": "Closed",
+        "maxAwardLevel": "$30,000"
+      },
+      {
+        "name": "C",
+        "treatmentsCovered": ['jfdkslaurew', 'dsafd', 'ads', 'amit', 'something', 'in'],
+        "status": "Open",
+        "maxAwardLevel": "$160,000"
+      },
+      {
+        "name": "D",
+        "treatmentsCovered": ['dsfd', 'gre', 'amitdf', 'adam', 'smartut', 'achla', 'haim'],
+        "status": "Closed",
+        "maxAwardLevel": "$24,000"
+      },
+    ]
+  }
+
+  const updatePrograms = () => {
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Some text</p>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <DataTable programs={programs.programs} />
+      <Button variant="contained" onClick={updatePrograms} color="primary">
+        Refresh Data
+      </Button>
     </div>
   );
 }
